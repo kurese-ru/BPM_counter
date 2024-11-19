@@ -1,2 +1,2 @@
-# mypkg-cp
+# mypkg
 Ross2リポジトリ
