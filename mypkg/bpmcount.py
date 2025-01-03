@@ -1,22 +1,39 @@
+# SPDX-FileCopyrightText: 2024 Hiroto Yasuhara
+# SPDX-License-Identifier: BSD-3-Clause
+
 import rclpy
 from rclpy.node import Node
-from person_msgs.msg import Person
-
-rclpy.init()
-node = Node("talker")
-pub = node.create_publisher(Person, "person", 10)
-n = 0
+from std_msgs.msg import String
 
 
-def cb():
-    global n
-    msg = Person()
-    msg.name = "安原大翔"
-    msg.age = n
-    pub.publish(msg)
-    n += 1
+class BpmCounter(Node):
+    def __init__(self):
+        super().__init__('bpm_counter')
+        self.publisher_ = self.create_publisher(String, 'bpm_info', 10)
+        self.timer_ = self.create_timer(1.0, self.timer_callback)
+        self.current_bpm = 60
+
+    def timer_callback(self):
+        beats_per_second = self.current_bpm / 60.0
+        msg = String()
+        msg.data = f'BPM: {self.current_bpm}, Beats per second: {beats_per_second:.2f}'
+        self.publisher_.publish(msg)
+        self.get_logger().info(msg.data)
+
+        # Increment BPM
+        self.current_bpm += 1
+        if self.current_bpm > 200:  # Limit the BPM to 200 for this example
+            self.current_bpm = 60  # Reset to 60
 
 
 def main():
-    node.create_timer(0.5, cb)
-    rclpy.spin(node)
+    rclpy.init()
+    node = BpmCounter()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
