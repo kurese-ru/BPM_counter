@@ -11,9 +11,9 @@ sudo apt-get install git
 ```  
 以下を入力し、リポジトリをクローン。  
 ```
-git clone
+git clone https://github.com/kurese-ru/BPM_counter.git
 ```  
-リポジトリに移動する。  
+クローンしたリポジトリに移動する。  
 ```
 cd
 ```  
