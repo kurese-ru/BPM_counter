@@ -1,5 +1,7 @@
 # BPM_counter
+
 ROS2でbpmcountというノードがbpmcountというトピックを通じてBPMを60から200までをカウントし、それに伴う1秒間の拍数を表示するというものです。
+
 ## このリポジトリで使用可能なノード
 * bpmcount
 
@@ -27,12 +29,12 @@ __init__.py  bpmcount.py
 ```  
 実行権限を付与する。  
 ```
-chmod +x　bpmcount.py
+chmod +x bpmcount.py
 ```  
 ## 使用方法
 以下のコマンドをターミナルで実行する。  
 ```
-ros2 run calendar_data calendar
+ros2 run bpmpkg bpmcount
 ```  
 実行結果  
 ```
@@ -44,15 +46,14 @@ ros2 run calendar_data calendar
 * c
 
 ## 動作環境
-
 ### 必要なソフトウェア
 * python
   * テスト済み：3.7~3.11
-  * 
+
 ### テスト環境
 * ubuntu LTS
   * ROS2 Humble
-  * 
+
 ### テストに使用したコンテナ  
 上田准教授の[コンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)を使用させていただきました。
 
