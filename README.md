@@ -4,7 +4,7 @@
 ROS2でbpmcountというノードがbpm_infoというトピックにBPMを60から200までと、それに伴う1秒間の拍数をパブリッシュするというものです。
 
 ## このリポジトリで使用可能なノード
-* bpmcount
+- bpmcount
 
 ## 使用準備
 以下のコマンドを順にターミナルで実行してください。  
@@ -22,27 +22,39 @@ cd bpmpkg/bpmpkg
 chmod +x bpmcount.py
 ```  
 ## 使用方法
-以下のコマンドをターミナルで実行する。  
+以下のコマンドをターミナルで実行する。(なにも表示されません。)  
 ```
 ros2 run bpmpkg bpmcount
-```  
-実行結果  
 ```
-
+別の端末で以下のコマンドをターミナルで実行する。
+```
+ros2 topic echo /bpm_info
+```
+実行結果(一部)  
+```
+data: 'BPM: 160, Beats per second: 2.67'
+---
+data: 'BPM: 161, Beats per second: 2.68'
+---
+data: 'BPM: 162, Beats per second: 2.70'
+---
+data: 'BPM: 163, Beats per second: 2.72'
+---
+data: 'BPM: 164, Beats per second: 2.73' 
 ```
 ## テスト用ファイル,ディレクトリ
-* a  
-* b  
-* c
+- launch  
+- test  
+- listener.py
 
 ## 動作環境
 ### 必要なソフトウェア
-* python
-  * テスト済み：3.7~3.11
+- python
+  - テスト済み：3.7~3.11
 
 ### テスト環境
-* ubuntu LTS
-  * ROS2 Humble
+- ubuntu 22.04.2 LTS
+  - ROS2 Humble
 
 ### テストに使用したコンテナ  
 上田教授の[コンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)を使用させていただきました。
