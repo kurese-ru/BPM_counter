@@ -15,7 +15,7 @@ git clone https://github.com/kurese-ru/BPM_counter.git
 ```  
 クローンしたリポジトリに移動する。  
 ```
-cd
+cd BPM_counter/bpmpkg
 ```  
 移動先のファイルを確認。  
 ```
@@ -23,11 +23,11 @@ ls
 ```
 以下のように表示されていればよい。
 ```
-
+__init__.py  bpmcount.py
 ```  
 実行権限を付与する。  
 ```
-chmod +x
+chmod +x　bpmcount.py
 ```  
 ## 使用方法
 以下のコマンドをターミナルで実行する。  
