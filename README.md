@@ -6,26 +6,20 @@ ROS2でbpmcountというノードがbpmcountというトピックを通じてBPM
 * bpmcount
 
 ## 使用準備
-以下のコマンドを順にターミナルで実行する。  
-Gitをインストールする。(Gitをインストールしていない方のみ行う。)  
+以下のコマンドを順にターミナルで実行してください。  
+リポジトリをクローン。
+- gitがある方用  
 ```
-sudo apt-get install git
-```  
-以下を入力し、リポジトリをクローン。  
+git clone git@github.com:kurese-ru/BPM_counter.git
+``` 
+- gitが無い方用   
 ```
 git clone https://github.com/kurese-ru/BPM_counter.git
-```  
+```
+  
 クローンしたリポジトリに移動する。  
 ```
 cd BPM_counter/bpmpkg
-```  
-移動先のファイルを確認。  
-```
-ls
-```
-以下のように表示されていればよい。
-```
-__init__.py  bpmcount.py
 ```  
 実行権限を付与する。  
 ```
@@ -55,7 +49,7 @@ ros2 run bpmpkg bpmcount
   * ROS2 Humble
 
 ### テストに使用したコンテナ  
-上田准教授の[コンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)を使用させていただきました。
+上田教授の[コンテナ](https://hub.docker.com/repository/docker/ryuichiueda/ubuntu22.04-ros2)を使用させていただきました。
 
 ## ライセンス
 - このソフトウェアパッケージは、３条項BSDライセンスの下、再頒布及び使用が許可されます
