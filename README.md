@@ -1,4 +1,5 @@
 # BPM_counter
+![test](https://github.com/kurese-ru/bpmpkg/actions/workflows/test.yml/badge.svg)
 ※このリポジトリはROS2のパッケージです。
 ROS2でbpmcountというノードがbpmcountというトピックを通じてBPMを60から200までをカウントし、それに伴う1秒間の拍数を表示するというものです。
 
