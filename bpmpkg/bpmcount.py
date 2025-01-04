@@ -19,11 +19,9 @@ class BpmCounter(Node):
         msg.data = f'BPM: {self.current_bpm}, Beats per second: {beats_per_second:.2f}'
         self.publisher_.publish(msg)
         self.get_logger().info(msg.data)
-
-        # Increment BPM
         self.current_bpm += 1
-        if self.current_bpm > 200:  # Limit the BPM to 200 for this example
-            self.current_bpm = 60  # Reset to 60
+        if self.current_bpm > 200:
+            self.current_bpm = 60
 
 
 def main():
@@ -36,4 +34,3 @@ def main():
     finally:
         node.destroy_node()
         rclpy.shutdown()
-
