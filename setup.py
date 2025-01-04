@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = 'mypkg'
+package_name = 'bpmpkg'
 
 setup(
     name=package_name,
@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'bpmcount = mypkg.bpmcount:main'
+            'bpmcount = bpmpkg.bpmcount:main',
+            'listener = bpmpkg.listener:main',
         ],
     },
 )
