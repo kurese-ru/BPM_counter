@@ -17,3 +17,5 @@ jobs:
           cd /root/ros2_ws
           rosdep update
           rosdep install -i --from-path src --rosdistro humble -y
+          bash -xv ./src/calendar_data/test/test.bash /root
+
