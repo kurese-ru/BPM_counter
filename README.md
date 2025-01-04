@@ -9,11 +9,6 @@ ROS2でbpmcountというノードがbpm_infoというトピックにBPMを60か�
 ## 使用準備
 以下のコマンドを順にターミナルで実行してください。  
 リポジトリをクローン。
-- gitがある方用  
-```
-git clone git@github.com:kurese-ru/BPM_counter.git
-``` 
-- gitが無い方用   
 ```
 git clone https://github.com/kurese-ru/BPM_counter.git
 ```
