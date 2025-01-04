@@ -19,7 +19,7 @@ git clone https://github.com/kurese-ru/BPM_counter.git
   
 クローンしたリポジトリに移動する。  
 ```
-cd BPM_counter/bpmpkg
+cd bpmpkg/bpmpkg
 ```  
 実行権限を付与する。  
 ```
