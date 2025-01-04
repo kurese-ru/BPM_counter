@@ -6,14 +6,14 @@ import launch_ros.actions
 
 def generate_launch_description():
 
-    talker = launch_ros.actions.Node(
-            package='mypkg',
-            executable='talker',
+    bpmcount = launch_ros.actions.Node(
+            package='bpmpkg',
+            executable='bpmcount',
             )
     listener = launch_ros.actions.Node(
-            package='mypkg',
+            package='bpmpkg',
             executable='listener',
             output='screen'
             )
 
-    return launch.LaunchDescription([talker, listener])
+    return launch.LaunchDescription([bpmcount, listener])
