@@ -15,6 +15,10 @@ ros2 run bpmpkg bpmcount
 ```
 
 ### listenerでのテスト結果
+上記のコマンドを実行したまま、以下のコマンドを別のターミナルで実行してテストを行いました。
+```
+ros2 run bpmpkg listener
+```  
 結果(一部)  
 ```
 [INFO] [1736069185.678389745] [listener]: Received BPM message: "BPM: 62, Beats per second: 1.03"
