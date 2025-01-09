@@ -1,7 +1,7 @@
 # bpmpkg
 ![test](https://github.com/kurese-ru/bpmpkg/actions/workflows/test.yml/badge.svg)  
 ※このリポジトリはROS2のパッケージです。  
-BPMを60から200の範囲で計算し、その結果を「bpm_info」というトピックにパブリッシュします。  
+BPMを60から200の範囲で計算し、その結果をbpm_infoというトピックにパブリッシュします。  
 また、BPMに基づいて1秒間の拍数も併せてパブリッシュします。  
 
 ## ノード
