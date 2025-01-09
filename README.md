@@ -1,4 +1,4 @@
-# BPM_counter
+# bpmpkg
 ![test](https://github.com/kurese-ru/bpmpkg/actions/workflows/test.yml/badge.svg)  
 ※このリポジトリはROS2のパッケージです。  
 ROS2でbpmcountというノードがbpm_infoというトピックにBPMを60から200までと、それに伴う1秒間の拍数をパブリッシュするというものです。
