@@ -31,10 +31,6 @@ ros2 run bpmpkg listener
 [INFO] [1736069192.671391541] [listener]: Received BPM message: "BPM: 69, Beats per second: 1.15"
 [INFO] [1736069193.671307075] [listener]: Received BPM message: "BPM: 70, Beats per second: 1.17"
 ```
-## テスト用ファイル,ディレクトリ
-- launch  
-- test  
-- listener.py
 
 ## 動作環境
 ### 必要なソフトウェア
