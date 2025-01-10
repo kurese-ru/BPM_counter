@@ -11,13 +11,22 @@ re=0
 direct=~
 [ "$1" != "" ] && direct="$1"
 
-cd $direct/ros2_ws
+cd "$direct/ros2_ws" || {
+    error_msg "ディレクトリ $direct/ros2_ws が見つかりません"
+    exit "$re"
+}
 colcon build
-source $direct/.bashrc
+source "$direct/.bashrc"
 
 timeout 10 ros2 launch bpmpkg talk_listen.launch.py > /tmp/bpmcount.log
-cat /tmp/bpmcount.log | grep -A 10 "BPM: 65"
-cat /tmp/bpmcount.log | grep -A 10 "Beats per second: 1.08"
+grep -A 10 "BPM: 65" /tmp/bpmcount.log || {
+    error_msg "BPM: 65 がログに見つかりません"
+    exit "$re"
+}
+grep -A 10 "Beats per second: 1.08" /tmp/bpmcount.log || {
+    error_msg "Beats per second: 1.08 がログに見つかりません"
+    exit "$re"
+}
 
 
 [ "$re" = 0 ] && echo OK
