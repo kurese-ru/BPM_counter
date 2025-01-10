@@ -1,56 +1,40 @@
-# BPM_counter
+# bpmpkg
 ![test](https://github.com/kurese-ru/bpmpkg/actions/workflows/test.yml/badge.svg)  
 ※このリポジトリはROS2のパッケージです。  
-ROS2でbpmcountというノードがbpm_infoというトピックにBPMを60から200までと、それに伴う1秒間の拍数をパブリッシュするというものです。
+BPMを60から200の範囲で計算し、その結果をbpm_infoというトピックにパブリッシュします。  
+また、BPMに基づいて1秒間の拍数も併せてパブリッシュします。  
 
-## このリポジトリで使用可能なノード
+## ノード
 - bpmcount
+- listener(テスト用)
 
-## 使用準備
-以下のコマンドを順にターミナルで実行してください。  
-リポジトリをクローン。
-```
-git clone https://github.com/kurese-ru/BPM_counter.git
-```
-  
-クローンしたリポジトリに移動する。  
-```
-cd bpmpkg/bpmpkg
-```  
-実行権限を付与する。  
-```
-chmod +x bpmcount.py
-```  
 ## 使用方法
 以下のコマンドをターミナルで実行する。(なにも表示されません。)  
 ```
 ros2 run bpmpkg bpmcount
 ```
-別の端末で以下のコマンドをターミナルで実行する。
+
+### listenerでのテスト結果
+上記のコマンドを実行したまま、以下のコマンドを別のターミナルで実行してテストを行いました。
 ```
-ros2 topic echo /bpm_info
+ros2 run bpmpkg listener
+```  
+結果(一部)  
 ```
-実行結果(一部)  
+[INFO] [1736069185.678389745] [listener]: Received BPM message: "BPM: 62, Beats per second: 1.03"
+[INFO] [1736069186.670157423] [listener]: Received BPM message: "BPM: 63, Beats per second: 1.05"
+[INFO] [1736069187.670897907] [listener]: Received BPM message: "BPM: 64, Beats per second: 1.07"
+[INFO] [1736069188.671323759] [listener]: Received BPM message: "BPM: 65, Beats per second: 1.08"
+[INFO] [1736069189.670958803] [listener]: Received BPM message: "BPM: 66, Beats per second: 1.10"
+[INFO] [1736069190.671065015] [listener]: Received BPM message: "BPM: 67, Beats per second: 1.12"
+[INFO] [1736069191.671049863] [listener]: Received BPM message: "BPM: 68, Beats per second: 1.13"
+[INFO] [1736069192.671391541] [listener]: Received BPM message: "BPM: 69, Beats per second: 1.15"
+[INFO] [1736069193.671307075] [listener]: Received BPM message: "BPM: 70, Beats per second: 1.17"
 ```
-data: 'BPM: 160, Beats per second: 2.67'
----
-data: 'BPM: 161, Beats per second: 2.68'
----
-data: 'BPM: 162, Beats per second: 2.70'
----
-data: 'BPM: 163, Beats per second: 2.72'
----
-data: 'BPM: 164, Beats per second: 2.73' 
-```
-## テスト用ファイル,ディレクトリ
-- launch  
-- test  
-- listener.py
 
 ## 動作環境
 ### 必要なソフトウェア
 - python
-  - テスト済み：3.7~3.11
 
 ### テスト環境
 - ubuntu 22.04.2 LTS
